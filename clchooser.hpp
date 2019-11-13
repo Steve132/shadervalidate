@@ -41,7 +41,14 @@ public:
 	std::vector<std::vector<cl::Device>> all_devices;
 	OpenCL_Chooser()
 	{
-		cl::Platform::get(&all_platforms);
+		try
+		{
+			cl::Platform::get(&all_platforms);
+		}
+		catch(const cl::Error& err)
+		{
+			throw std::runtime_error("No OpenCL platforms found or there was an error attempting find any");
+		}
 		all_devices.resize(all_platforms.size());
 		for(size_t i=0;i<all_platforms.size();i++)
 		{

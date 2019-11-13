@@ -137,7 +137,7 @@ public:
 	void help(const std::string& arg0)
 	{
 		help_activated=true;
-		std::cerr << "Usage: \n" << arg0 << " [-i <input_file> [-oc <output_file.c>]]+ [-c] [-p <Platform> [-d <Device>]*]  <ALL PASSTHROUGH CL COMPILER OPTIONS>"
+		std::cerr << "Usage: \n\t" << arg0 << " [-i <input_file> [-oc <output_file.c>]]+ [-c] [-p <Platform> [-d <Device>]*]  <ALL PASSTHROUGH CL COMPILER OPTIONS>"
 		<< "\n\t" << arg0 << " -list" << std::endl;
 	}
 	void writeback(const std::string& shader,std::string output)
